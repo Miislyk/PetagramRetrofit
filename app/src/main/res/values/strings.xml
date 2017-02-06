@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">PetagramRetrofit</string>
+    <string name="cardview_nombreMascota">Nombre</string>
+    <string name="cardview_totalLikes">0</string>
+    <string name="favoritos_menu_texto">Fav</string>
+    <string name="menu_options_about">About</string>
+    <string name="menu_options_contacto">Contacto</string>
+    <string name="menu_options_configurar">Configurar Cuenta</string>
+    <string name="cardview_texto_likes">Likes</string>
+    <string name="about_text_acercaDe">Acerca de...</string>
+    <string name="about_bodytext1">Información del Sistema</string>
+    <string name="about_bodytext2">Versión: 1.1</string>
+    <string name="about_bodytext3">Desarrollador: Miislyk</string>
+    <string name="contacto_title">Contactanos!</string>
+    <string name="contacto_subtitle">Envíanos un correo y nos pondremos en contacto contigo</string>
+    <string name="contacto_inputText_nombreHint">Nombre:</string>
+    <string name="contacto_inputText_correoHint">Correo:</string>
+    <string name="contacto_inputText_mensajeHint">Mensaje:</string>
+    <string name="contacto_buttonEnviar">Enviar Comentarios:</string>
+    <string name="configurarCuenta_textView_title">Petagram</string>
+    <string name="configurarCuenta_inputText_Hint">Escribe tu usuario:</string>
+    <string name="configurarCuenta_button_text">Guardar tu cuenta</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="mimascota_nombre">KIRA</string>
+</resources>

@@ -1,0 +1,32 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="actionbar_elevation">4dp</dimen>
+    <dimen name="cardview_corner">4dp</dimen>
+    <dimen name="cardview_imageButton_dimen">50dp</dimen>
+    <dimen name="cardview_textView_size">30sp</dimen>
+    <dimen name="about_marginTop">15dp</dimen>
+    <dimen name="about_text_acercaDe_size">20sp</dimen>
+    <dimen name="about_margin_acercaDe">10dp</dimen>
+    <dimen name="about_text_size">15sp</dimen>
+    <dimen name="about_margin_bodyText">30dp</dimen>
+    <dimen name="contacto_title_size">50sp</dimen>
+    <dimen name="contacto_subtitle_size">25sp</dimen>
+    <dimen name="contacto_button_textsize">15sp</dimen>
+    <dimen name="mimascota_fotoPerfil_size">150dp</dimen>
+    <dimen name="mimascota_fotoPerfil_Border">2dp</dimen>
+    <dimen name="mimascota_text_size">35sp</dimen>
+    <dimen name="cardview_size">350dp</dimen>
+    <dimen name="cardview_imageview_size">240dp</dimen>
+    <dimen name="cardview_imageviewBone_height">30dp</dimen>
+    <dimen name="cardview_imageviewBone_marginRight">5dp</dimen>
+    <dimen name="fab_margenes">16dp</dimen>
+    <dimen name="cardviewtimeline_size">150dp</dimen>
+    <dimen name="cardviewtimeline_imageviewpadding">3dp</dimen>
+    <dimen name="cardviewtimeline_textViewSize">23sp</dimen>
+    <dimen name="configCuenta_textInputLayout_width">300dp</dimen>
+    <dimen name="configCuenta_textInputLayout_marginTop">30dp</dimen>
+    <dimen name="configCuenta_button_marginTop">50dp</dimen>
+
+</resources>

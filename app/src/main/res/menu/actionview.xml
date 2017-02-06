@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuMascotasFavoritas"
+        android:title="@string/favoritos_menu_texto"
+        android:orderInCategory="102"
+        app:showAsAction="always"
+        android:icon="@drawable/star">
+
+    </item>
+</menu>
