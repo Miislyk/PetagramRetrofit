@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.androidcertificacion.petagramretrofit.modelo.BaseDatos;
 import com.androidcertificacion.petagramretrofit.modelo.RestApi.ConstantesRestApi;
 import com.androidcertificacion.petagramretrofit.modelo.RestApi.EndPointApi;
 import com.androidcertificacion.petagramretrofit.modelo.RestApi.adapter.RestApiAdapter;
@@ -95,6 +96,8 @@ public class PerfilMascotasPresentador implements IPresentador {
 
                 MascotaResponse mascotaResponse = response.body();
                 ArrayList<Mascota> mascotaPerfil = mascotaResponse.getMascotas();
+                BaseDatos guardaId = new BaseDatos(context);
+                guardaId.actualizarIdInstagram(user, mascotaPerfil.get(0).getId().toString());
                 obtenerMediosRecientes(mascotaPerfil.get(0).getId().toString());
 
             }

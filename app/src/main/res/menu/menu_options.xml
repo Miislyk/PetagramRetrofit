@@ -22,4 +22,11 @@
 
     </item>
 
+    <item
+        android:id="@+id/menuNotificaciones"
+        android:title="@string/menu_options_notificaciones"
+        android:orderInCategory="4">
+
+    </item>
+
 </menu>

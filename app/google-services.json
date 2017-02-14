@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "261785466271",
+    "firebase_url": "https://petagramnotifications.firebaseio.com",
+    "project_id": "petagramnotifications",
+    "storage_bucket": "petagramnotifications.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261785466271:android:dc8cc16f33f91ac6",
+        "android_client_info": {
+          "package_name": "com.androidcertificacion.petagramretrofit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "261785466271-s797ut4u7shbsl460fjui1al8l8edufa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqaIwT3Wi_nmwTL7iF3P0aHIvdzvQ1buI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "261785466271-s797ut4u7shbsl460fjui1al8l8edufa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

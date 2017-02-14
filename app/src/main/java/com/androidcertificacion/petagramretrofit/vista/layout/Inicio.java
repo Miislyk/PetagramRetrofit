@@ -7,15 +7,26 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.androidcertificacion.petagramretrofit.R;
+import com.androidcertificacion.petagramretrofit.modelo.BaseDatos;
+import com.androidcertificacion.petagramretrofit.notifications.restApi.Endpoints;
+import com.androidcertificacion.petagramretrofit.notifications.restApi.adapter.RestApiAdapter;
+import com.androidcertificacion.petagramretrofit.notifications.restApi.model.UsuarioResponse;
 import com.androidcertificacion.petagramretrofit.vista.adaptador.PageAdapter;
 import com.androidcertificacion.petagramretrofit.vista.fragments.MiMascota;
 import com.androidcertificacion.petagramretrofit.vista.fragments.mascotas;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Inicio extends AppCompatActivity {
 
@@ -73,10 +84,44 @@ public class Inicio extends AppCompatActivity {
                 Intent configurar = new Intent(this, ConfigurarCuenta.class);
                 startActivity(configurar);
                 break;
+            case R.id.menuNotificaciones:
+                enviarDatosRegistro();
+                break;
 
         }
 
         return super.onOptionsItemSelected(item);
+
+    }
+
+    private void enviarDatosRegistro() {
+
+        String token = FirebaseInstanceId.getInstance().getToken();
+        BaseDatos id = new BaseDatos(this);
+        String idInstagram = id.obtenerIdInstagram();
+
+        RestApiAdapter restApiAdapter = new RestApiAdapter();
+        Endpoints endpoints = restApiAdapter.establecerConexionRestApi();
+        Call<UsuarioResponse> response = endpoints.registrarUsuario(token, idInstagram);
+
+        response.enqueue(new Callback<UsuarioResponse>() {
+            @Override
+            public void onResponse(Call<UsuarioResponse> call, Response<UsuarioResponse> response) {
+                UsuarioResponse usuarioResponse = response.body();
+                Log.d("ID", usuarioResponse.getId());
+                Log.d("TOKENFIREBASE", usuarioResponse.getIdDispositivo());
+                Log.d("USUARIOINSTAGRAM", usuarioResponse.getIdUsuarioInstagram());
+
+            }
+
+            @Override
+            public void onFailure(Call<UsuarioResponse> call, Throwable t) {
+                Toast.makeText(Inicio.this, "ALGO SALIO MAL!!", Toast.LENGTH_LONG).show();
+                Log.e("ERROR", "Fallo en la conexión!!!!!!");
+            }
+        });
+
+
 
     }
 

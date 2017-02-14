@@ -39,7 +39,8 @@ public class BaseDatos extends SQLiteOpenHelper {
 
         String queryCrearTablaUser = "CREATE TABLE " + ConstantesBaseDatos.TABLA_USER
                 + "(" + ConstantesBaseDatos.CAMPO_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
-                + ConstantesBaseDatos.CAMPO_USER_NOMBRE + " TEXT NOT NULL)";
+                + ConstantesBaseDatos.CAMPO_USER_NOMBRE + " TEXT NOT NULL, "
+                + ConstantesBaseDatos.CAMPO_USER_IDINSTAGRAM + " TEXT) ";
 
         db.execSQL(queryCrearTabla);
         db.execSQL(queryCrearTablaUl);
@@ -225,6 +226,38 @@ public class BaseDatos extends SQLiteOpenHelper {
 
         database.close();
 
+    }
+
+    public void actualizarIdInstagram(String user, String id) {
+
+        String query = "UPDATE " + ConstantesBaseDatos.TABLA_USER + " SET "
+                + ConstantesBaseDatos.CAMPO_USER_IDINSTAGRAM + " = '" + id
+                + "' WHERE " + ConstantesBaseDatos.CAMPO_USER_NOMBRE + " = '" + user + "'";
+
+
+        SQLiteDatabase database = this.getWritableDatabase();
+        database.execSQL(query);
+
+        database.close();
+
+    }
+
+    public String obtenerIdInstagram() {
+
+        String id = "" ;
+
+        String query = "SELECT " + ConstantesBaseDatos.CAMPO_USER_IDINSTAGRAM +
+                " FROM " + ConstantesBaseDatos.TABLA_USER +
+                " WHERE " + ConstantesBaseDatos.CAMPO_USER_ID + " = 1";
+
+        SQLiteDatabase database = this.getReadableDatabase();
+        Cursor  registros = database.rawQuery(query, null);
+
+        if (registros.moveToNext()) {
+            id = registros.getString(0);
+        }
+
+        return id;
     }
 
 

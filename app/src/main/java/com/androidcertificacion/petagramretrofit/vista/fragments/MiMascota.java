@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.androidcertificacion.petagramretrofit.R;
 import com.androidcertificacion.petagramretrofit.modelo.BaseDatos;
+import com.androidcertificacion.petagramretrofit.modelo.InteractorMascota;
 import com.androidcertificacion.petagramretrofit.pojo.Mascota;
 import com.androidcertificacion.petagramretrofit.presentador.IPresentador;
 import com.androidcertificacion.petagramretrofit.presentador.PerfilMascotasPresentador;
@@ -53,6 +54,8 @@ public class MiMascota extends Fragment implements IFragments {
             user = consultaUsuario.obtenerUsuario();
         }else {
             user = "kiracatblackwhite";
+            InteractorMascota insertarPrimerUsuario = new InteractorMascota(getContext());
+            insertarPrimerUsuario.guardarUsuario(user);
             //getActivity().findViewById(R.id.textInputConfigurarCuenta).toString();
         }
 

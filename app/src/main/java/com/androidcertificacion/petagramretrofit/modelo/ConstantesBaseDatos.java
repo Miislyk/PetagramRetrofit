@@ -23,5 +23,6 @@ public class ConstantesBaseDatos {
     public static final String TABLA_USER = "usuario";
     public static final String CAMPO_USER_ID = "id";
     public static final String CAMPO_USER_NOMBRE = "nombre";
+    public static final String CAMPO_USER_IDINSTAGRAM = "idInstagram";
 
 }
