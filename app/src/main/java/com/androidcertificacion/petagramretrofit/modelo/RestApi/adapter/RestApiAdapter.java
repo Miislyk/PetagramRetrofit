@@ -28,6 +28,17 @@ public class RestApiAdapter {
 
     }
 
+    public EndPointApi establecerConexionLike() {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(ConstantesRestApi.ROOT_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        return retrofit.create(EndPointApi.class);
+
+    }
+
     public Gson obtieneGsonIdDeserializador() {
 
         GsonBuilder gsonBuilder = new GsonBuilder();

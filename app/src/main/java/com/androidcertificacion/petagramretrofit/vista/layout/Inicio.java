@@ -108,7 +108,7 @@ public class Inicio extends AppCompatActivity {
             @Override
             public void onResponse(Call<UsuarioResponse> call, Response<UsuarioResponse> response) {
                 UsuarioResponse usuarioResponse = response.body();
-                Log.d("ID", usuarioResponse.getId());
+                Log.d("ID", usuarioResponse.getId());//ID de firebase que se genera en el servidor
                 Log.d("TOKENFIREBASE", usuarioResponse.getIdDispositivo());
                 Log.d("USUARIOINSTAGRAM", usuarioResponse.getIdUsuarioInstagram());
 

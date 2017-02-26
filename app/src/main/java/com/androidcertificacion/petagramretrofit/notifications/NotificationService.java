@@ -10,6 +10,7 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.androidcertificacion.petagramretrofit.R;
+import com.androidcertificacion.petagramretrofit.vista.fragments.MiMascota;
 import com.androidcertificacion.petagramretrofit.vista.layout.Inicio;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -38,7 +39,7 @@ public class NotificationService extends FirebaseMessagingService {
             Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
         }
 
-        Intent intent = new Intent(this, Inicio.class);
+        Intent intent = new Intent(this, MiMascota.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent, PendingIntent.FLAG_ONE_SHOT);
 
         Uri sonido = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);

@@ -12,7 +12,7 @@ public class Mascota {
     private int likes;
     private int foto;
     private String urlFoto;
-
+    private String idMedia;
 
 
     public Mascota(String id, int foto, String nombre) {
@@ -28,6 +28,14 @@ public class Mascota {
         this.likes = likes;
         this.foto = foto;
         this.urlFoto = urlFoto;
+    }
+
+    public String getIdMedia() {
+        return idMedia;
+    }
+
+    public void setIdMedia(String idMedia) {
+        this.idMedia = idMedia;
     }
 
     public int getFoto() {

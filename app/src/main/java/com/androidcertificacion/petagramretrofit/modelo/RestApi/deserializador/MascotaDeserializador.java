@@ -40,6 +40,8 @@ public class MascotaDeserializador implements JsonDeserializer<MascotaResponse> 
 
             JsonObject mascotasUserResponseData = mediosRecientesResponse.get(i).getAsJsonObject();
 
+            String idImages = mascotasUserResponseData.get(JsonKeys.MEDIA_ID).getAsString();
+
             JsonObject userDataPerfil = mascotasUserResponseData.getAsJsonObject(JsonKeys.USER);
             String name = userDataPerfil.get(JsonKeys.USERNAME).getAsString();
             String fotoPerfil = userDataPerfil.get(JsonKeys.FOTO_PERFIL).getAsString();
@@ -56,6 +58,7 @@ public class MascotaDeserializador implements JsonDeserializer<MascotaResponse> 
             mascotaMediosRecientes.setFotoPerfil(fotoPerfil);
             mascotaMediosRecientes.setUrlFoto(urlMedia);
             mascotaMediosRecientes.setLikes(likes);
+            mascotaMediosRecientes.setIdMedia(idImages);
 
             mascotasRecientes.add(mascotaMediosRecientes);
 

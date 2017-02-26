@@ -9,6 +9,7 @@ public class UsuarioResponse {
     private String id;
     private String idDispositivo;
     private String idUsuarioInstagram;
+    private String idMedia;
 
     public UsuarioResponse() {
     }
@@ -17,6 +18,21 @@ public class UsuarioResponse {
         this.id = id;
         this.idDispositivo = idDispositivo;
         this.idUsuarioInstagram = idUsuarioInstagram;
+    }
+
+    public UsuarioResponse(String id, String idDispositivo, String idUsuarioInstagram, String idMedia) {
+        this.id = id;
+        this.idDispositivo = idDispositivo;
+        this.idUsuarioInstagram = idUsuarioInstagram;
+        this.idMedia = idMedia;
+    }
+
+    public String getIdMedia() {
+        return idMedia;
+    }
+
+    public void setIdMedia(String idMedia) {
+        this.idMedia = idMedia;
     }
 
     public String getId() {
