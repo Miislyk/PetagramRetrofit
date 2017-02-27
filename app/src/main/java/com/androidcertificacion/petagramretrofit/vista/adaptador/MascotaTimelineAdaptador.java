@@ -81,6 +81,7 @@ public class MascotaTimelineAdaptador extends RecyclerView.Adapter<MascotaTimeli
         responseCall.enqueue(new Callback<LikeResponse>() {
             @Override
             public void onResponse(Call<LikeResponse> call, Response<LikeResponse> response) {
+                LikeResponse insercionInstagram = response.body();
                 Toast.makeText(activity, "LIKE", Toast.LENGTH_SHORT).show();
             }
 
