@@ -100,6 +100,8 @@ public class Inicio extends AppCompatActivity {
         BaseDatos id = new BaseDatos(this);
         String idInstagram = id.obtenerIdInstagram();
 
+        id.close();
+
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         Endpoints endpoints = restApiAdapter.establecerConexionRestApi();
         Call<UsuarioResponse> response = endpoints.registrarUsuario(token, idInstagram);

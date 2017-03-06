@@ -27,6 +27,8 @@ public class InteractorMascota {
             insertarLike(mascota);
         }
 
+        baseDatos.close();
+
     }
 
     public void guardarUsuario(String user){
@@ -38,6 +40,8 @@ public class InteractorMascota {
             insertarUsuario(user);
         }
 
+        baseDatos.close();
+
     }
 
     private void insertarUsuario(String user) {
@@ -48,6 +52,7 @@ public class InteractorMascota {
         contentValues.put(ConstantesBaseDatos.CAMPO_USER_NOMBRE, user);
 
         baseDatos.insertarUsuario(contentValues);
+        baseDatos.close();
 
     }
 
@@ -64,12 +69,16 @@ public class InteractorMascota {
         baseDatos.insertarLikes(contentValues);
         baseDatos.insertarUltimoLike(mascota);
 
+        baseDatos.close();
+
     }
 
     public int obtenerLikes(Mascota mascota) {
 
         BaseDatos baseDatos = new BaseDatos(context);
+        baseDatos.close();
         return baseDatos.obtenerLikes(mascota);
+
 
     }
 
@@ -79,6 +88,8 @@ public class InteractorMascota {
         BaseDatos baseDatos = new BaseDatos(context);
 
         mascotasFavoritas = baseDatos.obtenerMascotas();
+
+        baseDatos.close();
 
         return mascotasFavoritas;
 

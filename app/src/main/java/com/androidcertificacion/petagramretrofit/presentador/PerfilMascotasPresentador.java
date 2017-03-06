@@ -99,6 +99,7 @@ public class PerfilMascotasPresentador implements IPresentador {
                 BaseDatos guardaId = new BaseDatos(context);
                 guardaId.actualizarIdInstagram(user, mascotaPerfil.get(0).getId().toString());
                 obtenerMediosRecientes(mascotaPerfil.get(0).getId().toString());
+                guardaId.close();
 
             }
 

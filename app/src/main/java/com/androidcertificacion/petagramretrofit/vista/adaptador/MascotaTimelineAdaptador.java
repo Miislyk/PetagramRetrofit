@@ -100,7 +100,8 @@ public class MascotaTimelineAdaptador extends RecyclerView.Adapter<MascotaTimeli
                 FirebaseInstanceId.getInstance().getId();
         BaseDatos id = new BaseDatos(activity);
         String idUsuarioInstagram = id.obtenerIdInstagram();
-        UsuarioResponse usuarioResponse = new UsuarioResponse(idDispositivo, idMediaInstagram, idUsuarioInstagram);
+        id.close();
+        UsuarioResponse usuarioResponse = new UsuarioResponse("", idDispositivo, idMediaInstagram, idUsuarioInstagram);
 
         com.androidcertificacion.petagramretrofit.notifications.restApi.adapter.RestApiAdapter restApiAdapter = new com.androidcertificacion.petagramretrofit.notifications.restApi.adapter.RestApiAdapter();
         Endpoints endpoints = restApiAdapter.establecerConexionRestApi();
@@ -119,17 +120,14 @@ public class MascotaTimelineAdaptador extends RecyclerView.Adapter<MascotaTimeli
             }
         });
 
-        String idFirebase = "";
-        UsuarioResponse usuarioNotificacion = new UsuarioResponse(idFirebase ,idDispositivo, idMediaInstagram, idUsuarioInstagram);
+        String idFirebase = "-KdwJPIRJpAtCo6um2Nc";
+        UsuarioResponse usuarioNotificacion = new UsuarioResponse(idFirebase ,idDispositivo, idUsuarioInstagram);
 
         Call<UsuarioResponse> responseNotificacion = endpoints.notificacionLike(usuarioNotificacion.getId(), usuarioNotificacion.getIdDispositivo(), usuarioNotificacion.getIdUsuarioInstagram());
         responseNotificacion.enqueue(new Callback<UsuarioResponse>() {
             @Override
             public void onResponse(Call<UsuarioResponse> call, Response<UsuarioResponse> response) {
                 UsuarioResponse respuestaNotificacion = response.body();
-                Log.d("ID_FIREBASE", respuestaNotificacion.getId());
-                Log.d("TOKEN_FIREBASE", respuestaNotificacion.getIdDispositivo());
-                Log.d("ANIMAL_FIREBASE", respuestaNotificacion.getIdUsuarioInstagram());
             }
 
             @Override

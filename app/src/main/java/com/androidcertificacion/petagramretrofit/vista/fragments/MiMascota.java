@@ -59,6 +59,8 @@ public class MiMascota extends Fragment implements IFragments {
             //getActivity().findViewById(R.id.textInputConfigurarCuenta).toString();
         }
 
+        consultaUsuario.close();
+
         fotoPerfil.setImageResource(R.drawable.importance);
         textViewNombre.setText("---");
 
