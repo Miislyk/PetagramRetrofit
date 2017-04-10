@@ -29,6 +29,7 @@ public class ConfigurarCuenta extends AppCompatActivity {
         textInputEditTextUser = (TextInputEditText) findViewById(R.id.textInputConfigurarCuenta);
         buttonConfigurar = (Button) findViewById(R.id.btnConfigurarCuenta);
 
+
         final InteractorMascota interactorMascota = new InteractorMascota(this);
 
         buttonConfigurar.setOnClickListener(new View.OnClickListener() {

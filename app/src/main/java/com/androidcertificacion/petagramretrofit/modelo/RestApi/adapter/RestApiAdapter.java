@@ -4,7 +4,10 @@ import com.androidcertificacion.petagramretrofit.modelo.RestApi.ConstantesRestAp
 import com.androidcertificacion.petagramretrofit.modelo.RestApi.EndPointApi;
 import com.androidcertificacion.petagramretrofit.modelo.RestApi.deserializador.MascotaDeserializador;
 import com.androidcertificacion.petagramretrofit.modelo.RestApi.deserializador.MascotaIdDeserializador;
+import com.androidcertificacion.petagramretrofit.modelo.RestApi.deserializador.RelationshipDeserializador;
 import com.androidcertificacion.petagramretrofit.modelo.RestApi.modelo.MascotaResponse;
+import com.androidcertificacion.petagramretrofit.modelo.RestApi.modelo.RelationshipResponse;
+import com.androidcertificacion.petagramretrofit.pojo.Relationship;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -52,6 +55,15 @@ public class RestApiAdapter {
 
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(MascotaResponse.class, new MascotaDeserializador());
+
+        return gsonBuilder.create();
+
+    }
+
+    public Gson obtieneGsonRelationshipDeserializador() {
+
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(RelationshipResponse.class, new RelationshipDeserializador());
 
         return gsonBuilder.create();
 

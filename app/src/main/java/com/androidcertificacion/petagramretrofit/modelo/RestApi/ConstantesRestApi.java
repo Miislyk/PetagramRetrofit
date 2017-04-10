@@ -11,12 +11,14 @@ public class ConstantesRestApi {
     public static final String ACCESS_TOKEN = "4236031574.65e3ca8.d107fd91aa80413eae1b577af82f6c46";
     //public static final String TEXT_ACCESS_TOKEN_SEARCH = "&access_token=";
     public static final String TEXT_USERS_SEARCH = "users/search";
-    //public static final String TEXT_ACCESS_TOKEN_USERS = "?access_token=";
+    public static final String KEY_ACCESS_TOKEN = "?access_token=";
     public static final String URL_MEDIA_RECENT_USERS = "users/{usuario}/media/recent/";
     public static final String URL_MEDIA_LIKESRESPONSE = "media/{media-id}/likes";
+    public static final String URL_RELATIONSHIPS = "users/{user_id}/relationship" + KEY_ACCESS_TOKEN + ACCESS_TOKEN;
 
     //https://api.instagram.com/v1/users/search?q=user&access_token=ACCESS_TOKEN
     //https://api.instagram.com/v1/users/idUser/media/recent/?access_token=ACCESS_TOKEN
     //https://api.instagram.com/v1/media/{media-id}/likes
+    //https://api.instagram.com/v1/users/{user-id}/relationship?access_token=ACCESS-TOKEN
 
 }

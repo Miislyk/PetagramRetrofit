@@ -25,4 +25,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="mimascota_nombre">KIRA</string>
     <string name="menu_options_notificaciones">Recibir Notificaciones</string>
+    <string name="wear_texto_ver_perfil">Ver Perfil</string>
+    <string name="wear_texto_ver_usuario">Ver Usuario</string>
 </resources>

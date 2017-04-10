@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Version manifest de notifications -->
+<?xml version="1.0" encoding="utf-8"?><!-- Version manifest de notifications -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.androidcertificacion.petagramretrofit">
 
@@ -33,7 +32,7 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".vista.layout.Inicio" />
 
-        <activity android:name=".vista.layout.ConfigurarCuenta"></activity>
+        <activity android:name=".vista.layout.ConfigurarCuenta" />
 
         <service android:name=".notifications.NotificationService">
             <intent-filter>
@@ -41,6 +40,7 @@
             </intent-filter>
         </service>
 
+        <activity android:name=".vista.layout.verUsuario"></activity>
     </application>
 
 </manifest>

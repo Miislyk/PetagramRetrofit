@@ -2,8 +2,11 @@ package com.androidcertificacion.petagramretrofit.modelo.RestApi;
 
 import com.androidcertificacion.petagramretrofit.modelo.RestApi.modelo.LikeResponse;
 import com.androidcertificacion.petagramretrofit.modelo.RestApi.modelo.MascotaResponse;
+import com.androidcertificacion.petagramretrofit.modelo.RestApi.modelo.RelationshipResponse;
+import com.androidcertificacion.petagramretrofit.pojo.Relationship;
 
 import retrofit2.Call;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
@@ -12,6 +15,7 @@ import retrofit2.http.Query;
 /**
  * Created by lhrat on 21/01/2017.
  */
+
 
 public interface EndPointApi {
 
@@ -31,6 +35,15 @@ public interface EndPointApi {
     Call<LikeResponse> postLike(@Path("media-id") String mediaId,
                                 @Query("access_token") String accessToken);
 
+    //https://api.instagram.com/v1/users/{user-id}/relationship?access_token=ACCESS-TOKEN
+    @GET(ConstantesRestApi.URL_RELATIONSHIPS)
+    Call<RelationshipResponse> getRelationship(@Path("user-id") String userId);
+
+    @POST(ConstantesRestApi.URL_RELATIONSHIPS)
+    Call<RelationshipResponse> setRelationship(@Path("user-id") String userId,
+                                               @Field("action") String action);
+
 
 
 }
+
